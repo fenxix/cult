@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>CULT Lounge Bar — Костанай, ул. Павлова, 46</title>
+<meta name="description" content="CULT Lounge Bar в Костанае: авторская кухня, коктейли, премиальные кальяны, живой вокал и DJ. Бронь столов в WhatsApp.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+tailwind.config = { theme: { extend: {
+  fontFamily: { serif: ['"Playfair Display"', 'serif'], sans: ['Montserrat', 'sans-serif'] },
+  colors: { ink: '#050507', coal: '#0A0A0F', graphite: '#121218', gold: '#D4AF37', brass: '#C5A059', amber: '#E5C568' }
+}}};
+</script>
+<style>
+  html { scroll-behavior: smooth; }
+  body { background: #050507; color: #d9d6cf; font-family: Montserrat, sans-serif; }
+  section[id] { scroll-margin-top: 88px; }
+  .hdr { backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px); background: rgba(5, 5, 7, 0.85); border-bottom: 1px solid rgba(212, 175, 55, 0.12); }
+  .gold-text { background: linear-gradient(120deg, #C5A059, #E5C568 50%, #D4AF37); -webkit-background-clip: text; background-clip: text; color: transparent; }
+  .btn-gold { background: linear-gradient(120deg, #C5A059, #E5C568 50%, #D4AF37); color: #050507; font-weight: 600; letter-spacing: .12em; text-transform: uppercase; transition: box-shadow .3s, transform .3s; }
+  .btn-gold:hover { box-shadow: 0 0 32px rgba(212, 175, 55, .45); transform: translateY(-2px); }
+  .btn-ghost { border: 1px solid rgba(212, 175, 55, .5); color: #E5C568; letter-spacing: .12em; text-transform: uppercase; transition: background .3s; }
+  .btn-ghost:hover { background: rgba(212, 175, 55, .1); }
+  .card { background: #0A0A0F; border: 1px solid rgba(212, 175, 55, .15); transition: transform .4s, box-shadow .4s, border-color .4s; }
+  .card:hover { transform: scale(1.02); border-color: rgba(212, 175, 55, .5); box-shadow: 0 0 36px rgba(212, 175, 55, .14); }
+  /* Image placeholder: drop a file with the shown name next to index.html and it replaces the label */
+  .ph { position: relative; overflow: hidden; background: radial-gradient(circle at 30% 20%, #1c1a14, #0A0A0F 70%); }
+  .ph::after { content: ""; position: absolute; inset: 10px; border: 1px dashed rgba(212, 175, 55, .25); z-index: 0; pointer-events: none; }
+  .ph .lbl { position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; font-size: .72rem; letter-spacing: .22em; color: rgba(212, 175, 55, .6); z-index: 0; }
+  .ph img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; z-index: 1; }
+  .ph.shade img + .shade-layer { display: block; }
+  .reveal { opacity: 0; transform: translateY(24px); transition: opacity .9s ease, transform .9s ease; }
+  .reveal.in { opacity: 1; transform: none; }
+  .eyebrow { color: #C5A059; font-size: .78rem; letter-spacing: .28em; }
+  .rule { width: 56px; height: 1px; background: #D4AF37; }
+  :focus-visible { outline: 2px solid #E5C568; outline-offset: 3px; }
+  @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } .reveal { opacity: 1; transform: none; transition: none; } }
+</style>
+</head>
+<body class="antialiased">
+
+<!-- HEADER -->
+<header class="hdr fixed top-0 inset-x-0 z-50">
+  <div class="max-w-7xl mx-auto px-5 h-[72px] flex items-center justify-between">
+    <a href="#top" class="leading-none">
+      <span class="block font-serif text-2xl gold-text tracking-[.3em]">CULT</span>
+      <span class="block text-[.6rem] tracking-[.45em] text-brass mt-1">LOUNGE BAR</span>
+    </a>
+    <nav class="hidden lg:flex gap-9 text-[.8rem] tracking-[.15em] uppercase text-stone-300">
+      <a class="hover:text-amber transition" href="#about">О нас</a>
+      <a class="hover:text-amber transition" href="#bar">Меню и бар</a>
+      <a class="hover:text-amber transition" href="#hookah">Кальяны</a>
+      <a class="hover:text-amber transition" href="#gallery">Атмосфера</a>
+      <a class="hover:text-amber transition" href="#contacts">Контакты</a>
+    </nav>
+    <div class="flex items-center gap-3">
+      <a data-wa class="btn-gold hidden sm:inline-block px-6 py-3 text-[.72rem] rounded-sm" href="#">Забронировать стол</a>
+      <button id="burger" class="lg:hidden w-11 h-11 border border-gold/30 text-amber" aria-label="Открыть меню" aria-expanded="false"><i class="fa-solid fa-bars"></i></button>
+    </div>
+  </div>
+  <nav id="mnav" class="hidden lg:hidden px-5 pb-5 flex-col gap-4 text-sm tracking-[.15em] uppercase text-stone-300">
+    <a href="#about">О нас</a><a href="#bar">Меню и бар</a><a href="#hookah">Кальяны</a><a href="#gallery">Атмосфера</a><a href="#contacts">Контакты</a>
+    <a data-wa class="btn-gold sm:hidden text-center px-6 py-3 text-xs rounded-sm" href="#">Забронировать стол</a>
+  </nav>
+</header>
+
+<main id="top">
+
+<!-- HERO -->
+<section class="relative min-h-screen flex flex-col justify-end pt-32">
+  <div class="ph absolute inset-0"><span class="lbl">hero-bg.jpg</span><img src="hero-bg.jpg" alt="" onerror="this.remove()"></div>
+  <div class="absolute inset-0 z-[2] bg-gradient-to-b from-ink/80 via-ink/55 to-ink"></div>
+  <div class="relative z-[3] max-w-7xl mx-auto px-5 w-full pb-10">
+    <p class="eyebrow flex items-center gap-3 mb-6"><span class="w-2 h-2 rounded-full bg-gold"></span>УЛ. ПАВЛОВА, 46 | КОСТАНАЙ</p>
+    <h1 class="font-serif gold-text text-4xl sm:text-6xl lg:text-7xl leading-[1.1] max-w-4xl">Новая точка на карте ваших вечеров</h1>
+    <p class="mt-6 text-lg sm:text-xl text-stone-300 max-w-xl font-light">Музыка. Свет. Движение. Энергия, которую невозможно передать словами.</p>
+    <div class="mt-10 flex flex-col sm:flex-row gap-4">
+      <a data-wa class="btn-gold px-9 py-4 text-sm text-center rounded-sm" href="#">Забронировать стол</a>
+      <a class="btn-ghost px-9 py-4 text-sm text-center rounded-sm" href="#bar">Смотреть меню</a>
+    </div>
+    <div class="mt-16 grid sm:grid-cols-3 gap-px bg-gold/15 border border-gold/15">
+      <div class="bg-ink/85 p-5"><i class="fa-regular fa-clock text-gold mb-2"></i><p class="text-sm">Пн–Чт: 12:00–02:00</p></div>
+      <div class="bg-ink/85 p-5"><i class="fa-regular fa-clock text-gold mb-2"></i><p class="text-sm">Пт–Сб: 12:00–03:00</p></div>
+      <div class="bg-ink/85 p-5"><i class="fa-solid fa-square-parking text-gold mb-2"></i><p class="text-sm">Собственная парковка для гостей</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about" class="py-24 lg:py-32 bg-coal">
+  <div class="max-w-7xl mx-auto px-5 grid lg:grid-cols-2 gap-14 items-center">
+    <div class="reveal">
+      <p class="eyebrow mb-4">КОНЦЕПЦИЯ</p>
+      <div class="rule mb-6"></div>
+      <h2 class="font-serif text-3xl sm:text-5xl gold-text leading-tight">Это будет больше, чем просто открытие</h2>
+      <p class="mt-8 text-stone-300 leading-8 max-w-lg">CULT — это пространство современного гедонизма и стиля. Авторская кухня, изысканные коктейли, премиальные табачные миксы и атмосфера, в которой хочется раствориться.</p>
+    </div>
+    <div class="reveal ph aspect-[4/5] border border-gold/20"><span class="lbl">about-interior.jpg</span><img src="about-interior.jpg" alt="Интерьер CULT Lounge Bar" onerror="this.remove()"></div>
+  </div>
+</section>
+
+<!-- ATMOSPHERE -->
+<section id="atmosphere" class="py-24 lg:py-32">
+  <div class="max-w-7xl mx-auto px-5">
+    <div class="reveal text-center max-w-2xl mx-auto mb-16">
+      <p class="eyebrow mb-4">МУЗЫКА</p>
+      <h2 class="font-serif text-3xl sm:text-5xl gold-text">Ночи, которые запоминаются</h2>
+    </div>
+    <div class="grid md:grid-cols-2 gap-8">
+      <article class="reveal card">
+        <div class="ph aspect-[4/3]"><span class="lbl">vocal.jpg</span><img src="vocal.jpg" alt="Живой вокал" onerror="this.remove()"></div>
+        <div class="p-8">
+          <p class="font-serif text-gold text-lg mb-2">01</p>
+          <h3 class="font-serif text-2xl text-amber mb-3">Живой вокал</h3>
+          <p class="text-stone-400 leading-7">Голос, который наполнит пространство и станет частью этой ночи.</p>
+        </div>
+      </article>
+      <article class="reveal card">
+        <div class="ph aspect-[4/3]"><span class="lbl">dj.jpg</span><img src="dj.jpg" alt="DJ за пультом" onerror="this.remove()"></div>
+        <div class="p-8">
+          <p class="font-serif text-gold text-lg mb-2">02</p>
+          <h3 class="font-serif text-2xl text-amber mb-3">За пультом — DJ</h3>
+          <p class="text-stone-400 leading-7">Ритм, который задаёт тон ночи и не позволяет ей остаться просто воспоминанием.</p>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- BAR -->
+<section id="bar" class="py-24 lg:py-32 bg-coal">
+  <div class="max-w-7xl mx-auto px-5">
+    <div class="reveal max-w-2xl mb-16">
+      <p class="eyebrow mb-4">АВТОРСКАЯ КАРТА</p>
+      <h2 class="font-serif text-3xl sm:text-5xl gold-text">Необычное — в деталях</h2>
+      <p class="mt-6 text-stone-300 leading-8">Вкусовые сочетания, которые удивляют, и коктейли, у каждого из которых своя история.</p>
+    </div>
+    <div class="grid md:grid-cols-3 gap-8">
+      <article class="reveal card">
+        <div class="ph aspect-[3/4]"><span class="lbl">cocktail-1.jpg</span><img src="cocktail-1.jpg" alt="Коктейль Blooming of Gapan" onerror="this.remove()"></div>
+        <div class="p-6"><h3 class="font-serif text-xl text-amber mb-2">Blooming of Gapan</h3><p class="text-stone-400 text-sm leading-6">Ром, водка, фуджи, сакура.</p></div>
+      </article>
+      <article class="reveal card">
+        <div class="ph aspect-[3/4]"><span class="lbl">cocktail-2.jpg</span><img src="cocktail-2.jpg" alt="Авторские миксы" onerror="this.remove()"></div>
+        <div class="p-6"><h3 class="font-serif text-xl text-amber mb-2">Фирменные миксы</h3><p class="text-stone-400 text-sm leading-6">Авторские коктейли от шеф-бармена.</p></div>
+      </article>
+      <article class="reveal card">
+        <div class="ph aspect-[3/4]"><span class="lbl">cocktail-3.jpg</span><img src="cocktail-3.jpg" alt="Винная карта" onerror="this.remove()"></div>
+        <div class="p-6"><h3 class="font-serif text-xl text-amber mb-2">Подача и винная карта</h3><p class="text-stone-400 text-sm leading-6">Элегантная подача и тщательно подобранная винная карта.</p></div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- HOOKAH -->
+<section id="hookah" class="py-24 lg:py-32">
+  <div class="max-w-7xl mx-auto px-5">
+    <div class="reveal text-center max-w-2xl mx-auto mb-16">
+      <p class="eyebrow mb-4">КАЛЬЯННОЕ МЕНЮ</p>
+      <h2 class="font-serif text-3xl sm:text-5xl gold-text">Искусство дыма</h2>
+      <p class="mt-6 text-stone-300 leading-8">Премиальные бренды табака и глубокие миксы для ценителей.</p>
+    </div>
+    <article class="reveal card grid md:grid-cols-2 max-w-5xl mx-auto">
+      <div class="ph min-h-[320px]"><span class="lbl">hookah.jpg</span><img src="hookah.jpg" alt="Кальян Тёмный шоколад" onerror="this.remove()"></div>
+      <div class="p-8 sm:p-12 flex flex-col justify-center">
+        <p class="eyebrow mb-3">БРЕНД BONCHE</p>
+        <h3 class="font-serif text-3xl text-amber mb-4">Тёмный шоколад</h3>
+        <p class="text-stone-300 leading-8">Комплементарный и многогранный вкус с нотками кокоса, табака, ананаса и пряностей.</p>
+        <a data-wa class="btn-ghost self-start mt-8 px-7 py-3 text-xs rounded-sm" href="#">Заказать к столу</a>
+      </div>
+    </article>
+  </div>
+</section>
+
+<!-- GALLERY -->
+<section id="gallery" class="py-24 lg:py-32 bg-coal">
+  <div class="max-w-7xl mx-auto px-5">
+    <div class="reveal text-center max-w-2xl mx-auto mb-14">
+      <p class="eyebrow mb-4">ИНТЕРЬЕР</p>
+      <h2 class="font-serif text-3xl sm:text-5xl gold-text">Эстетика в каждой детали</h2>
+    </div>
+    <div class="reveal grid grid-cols-2 md:grid-cols-4 md:grid-rows-2 gap-3 md:h-[560px]">
+      <div class="ph card md:col-span-2 md:row-span-2 aspect-square md:aspect-auto"><span class="lbl">gallery-1.jpg</span><img src="gallery-1.jpg" alt="Атмосфера бара" onerror="this.remove()"></div>
+      <div class="ph card aspect-square md:aspect-auto"><span class="lbl">gallery-2.jpg</span><img src="gallery-2.jpg" alt="Посадка" onerror="this.remove()"></div>
+      <div class="ph card aspect-square md:aspect-auto"><span class="lbl">gallery-3.jpg</span><img src="gallery-3.jpg" alt="Детали интерьера" onerror="this.remove()"></div>
+      <div class="ph card col-span-2 aspect-[2/1] md:aspect-auto"><span class="lbl">gallery-4.jpg</span><img src="gallery-4.jpg" alt="Барная стойка" onerror="this.remove()"></div>
+    </div>
+  </div>
+</section>
+
+<!-- COMFORT -->
+<section class="py-24 lg:py-32">
+  <div class="max-w-7xl mx-auto px-5">
+    <div class="reveal text-center max-w-2xl mx-auto mb-14">
+      <p class="eyebrow mb-4">КОМФОРТ И СЕРВИС</p>
+      <h2 class="font-serif text-3xl sm:text-5xl gold-text">Всё для вашего вечера</h2>
+    </div>
+    <div class="grid md:grid-cols-3 gap-8">
+      <div class="reveal card p-9 text-center"><i class="fa-solid fa-car text-gold text-3xl mb-5"></i><p class="leading-7 text-stone-300">Собственная парковка для гостей заведения.</p></div>
+      <div class="reveal card p-9 text-center"><i class="fa-solid fa-location-dot text-gold text-3xl mb-5"></i><p class="leading-7 text-stone-300">Удобное расположение в центре города: ул. Павлова, 46.</p></div>
+      <div class="reveal card p-9 text-center"><i class="fa-solid fa-bell-concierge text-gold text-3xl mb-5"></i><p class="leading-7 text-stone-300">Безупречный сервис и помощь с выбором от хостес.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="py-24 lg:py-32 relative overflow-hidden" style="background: radial-gradient(ellipse at center, rgba(212,175,55,.18), transparent 65%), #0A0A0F;">
+  <div class="reveal relative max-w-3xl mx-auto px-5 text-center">
+    <h2 class="font-serif text-3xl sm:text-5xl gold-text leading-tight">Проведите вечер в стиле CULT</h2>
+    <p class="mt-6 text-stone-300">Напишите нам в WhatsApp, и хостес подберёт для вас лучший стол.</p>
+    <a data-wa class="btn-gold inline-block mt-10 px-10 py-4 text-sm rounded-sm" href="#"><i class="fa-brands fa-whatsapp mr-2"></i>Забронировать в WhatsApp</a>
+  </div>
+</section>
+
+<!-- CONTACTS -->
+<section id="contacts" class="py-24 lg:py-32">
+  <div class="max-w-7xl mx-auto px-5 grid lg:grid-cols-2 gap-12 items-stretch">
+    <div class="reveal">
+      <p class="eyebrow mb-4">КОНТАКТЫ</p>
+      <h2 class="font-serif text-3xl sm:text-5xl gold-text mb-10">CULT Lounge Bar</h2>
+      <ul class="space-y-6 text-stone-300">
+        <li class="flex gap-4"><i class="fa-solid fa-location-dot text-gold mt-1"></i><span>Костанай, ул. Павлова, 46</span></li>
+        <li class="flex gap-4"><i class="fa-brands fa-whatsapp text-gold mt-1"></i><a data-phone class="hover:text-amber transition" href="#">+7 (700) 000-00-00</a></li>
+        <li class="flex gap-4"><i class="fa-regular fa-clock text-gold mt-1"></i><span>Пн–Чт 12:00–02:00<br>Пт–Сб 12:00–03:00</span></li>
+      </ul>
+      <a id="mapLink" class="btn-ghost inline-block mt-10 px-8 py-3 text-xs rounded-sm" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=Костанай,+ул.+Павлова,+46">Открыть на карте</a>
+    </div>
+    <div class="reveal ph card min-h-[340px]"><span class="lbl">map.jpg</span><img src="map.jpg" alt="Карта проезда" onerror="this.remove()"></div>
+  </div>
+</section>
+
+</main>
+
+<!-- FOOTER -->
+<footer class="border-t border-gold/15 py-10 pb-28 md:pb-10 bg-ink">
+  <div class="max-w-7xl mx-auto px-5 flex flex-col md:flex-row gap-6 justify-between items-center text-sm text-stone-500">
+    <p>&copy; <span id="yr"></span> CULT Lounge Bar. Костанай.</p>
+    <nav class="flex flex-wrap justify-center gap-6 uppercase tracking-widest text-xs">
+      <a class="hover:text-amber" href="#about">О нас</a><a class="hover:text-amber" href="#bar">Меню и бар</a><a class="hover:text-amber" href="#hookah">Кальяны</a><a class="hover:text-amber" href="#gallery">Атмосфера</a><a class="hover:text-amber" href="#contacts">Контакты</a>
+    </nav>
+  </div>
+</footer>
+
+<!-- Floating WhatsApp button (mobile) -->
+<a data-wa aria-label="Написать в WhatsApp" href="#" class="md:hidden fixed bottom-5 right-5 z-50 w-14 h-14 rounded-full btn-gold flex items-center justify-center text-2xl shadow-[0_0_28px_rgba(212,175,55,.5)]"><i class="fa-brands fa-whatsapp"></i></a>
+
+<script>
+  // ---- Замените на реальный номер: только цифры, с кодом страны ----
+  const WA_NUMBER = "77000000000";
+  const PHONE_DISPLAY = "+7 (700) 000-00-00";
+  const WA_TEXT = "Здравствуйте! Хочу забронировать стол в CULT Lounge Bar.\nДата: \nВремя: \nКоличество гостей: ";
+
+  const waUrl = "https://wa.me/" + WA_NUMBER + "?text=" + encodeURIComponent(WA_TEXT);
+  document.querySelectorAll("[data-wa]").forEach(a => { a.href = waUrl; a.target = "_blank"; a.rel = "noopener"; });
+  document.querySelectorAll("[data-phone]").forEach(a => { a.href = "https://wa.me/" + WA_NUMBER; a.textContent = PHONE_DISPLAY; });
+  document.getElementById("yr").textContent = new Date().getFullYear();
+
+  // Mobile menu
+  const burger = document.getElementById("burger"), mnav = document.getElementById("mnav");
+  burger.addEventListener("click", () => {
+    const open = mnav.classList.toggle("hidden") === false;
+    mnav.classList.toggle("flex", open);
+    burger.setAttribute("aria-expanded", open);
+  });
+  mnav.querySelectorAll("a").forEach(a => a.addEventListener("click", () => { mnav.classList.add("hidden"); mnav.classList.remove("flex"); }));
+
+  // Fade-in on scroll
+  const io = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) { e.target.classList.add("in"); io.unobserve(e.target); } }), { threshold: .12 });
+  document.querySelectorAll(".reveal").forEach(el => io.observe(el));
+</script>
+</body>
+</html>
